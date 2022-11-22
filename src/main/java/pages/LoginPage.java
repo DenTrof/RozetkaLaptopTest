@@ -19,7 +19,7 @@ public class LoginPage extends GeneralPage {
         waitElementIsVisible(driver.findElement(submitBtn)).click();
 
         try {
-            System.out.println("You have registrated on Rozetka");
+            System.out.println("You have been registrated on Rozetka");
         } catch (AssertionError e) {
             System.out.println("Registration failed");
             throw e;

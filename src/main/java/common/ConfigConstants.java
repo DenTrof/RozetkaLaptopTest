@@ -3,6 +3,9 @@ package common;
 public class ConfigConstants {
 
     public static final String PLATFORM_BROWSER = "windows_chrome";
+    public static final String PHONE = "+380954761650";
+    public static final String PASSWORD = "123Denis4";
+
     public static class TimeOutVariable {
         public static final int WAITING_TIME = 10;
         public static final int WAIT_ELEMENT_TIME = 15;

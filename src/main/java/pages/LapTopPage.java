@@ -14,19 +14,22 @@ public class LapTopPage extends GeneralPage {
     private final By itemOne = By.xpath("//rz-catalog-tile//a");
     private final By labelTopSale = By.xpath("//rz-label/span");
 
-    // Не вышло использовать явные ожидания, видимо связано с какой то js динамикой на странице
+    // * Не вышло использовать явные ожидания, видимо связано с какой то js динамикой на странице или с ajax
     public void lapTopPage() throws InterruptedException {
         driver.findElement(laptopsAndComputers).click();
         driver.findElement(laptopsPage).click();
         Thread.sleep(2000);
+        // *
         // waitElementIsVisible(driver.findElement(filterRozetka)).click();
         driver.findElement(filterRozetka).click();
         Thread.sleep(2000);
+        // *
         // waitElementIsVisible(driver.findElement(filterSliderMax)).clear();
         driver.findElement(filterSliderMax).clear();
         driver.findElement(filterSliderMax).sendKeys("100000");
         driver.findElement(buttonOk).click();
         Thread.sleep(2000);
+        // *
         // waitElementIsVisible(driver.findElement(itemOne)).click();*/
         driver.findElement(itemOne).click();
         WebElement topSaleElement = driver.findElement(labelTopSale);

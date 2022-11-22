@@ -2,20 +2,18 @@ package tests;
 
 import common.CommonAction;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pages.LapTopPage;
 import pages.LoginPage;
 
-public class CheckAccount {
-    private String phone = "+380954761650";
-    private String password = "123Denis4";
+import static common.ConfigConstants.PASSWORD;
+import static common.ConfigConstants.PHONE;
 
+public class CheckAccount {
 
     @Test(description = "Rozetka Login page test")
     public void SetRozetkaAccount() throws InterruptedException {
-        new LoginPage().enterLoginData(phone, password);
+        new LoginPage().enterLoginData(PHONE, PASSWORD);
     }
 
     @Test(description = "LapTopPage test", dependsOnMethods = "SetRozetkaAccount")
@@ -23,7 +21,7 @@ public class CheckAccount {
         new LapTopPage().lapTopPage();
     }
 
-    @AfterSuite(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser() throws InterruptedException {
         CommonAction.closeBrowser();
     }
